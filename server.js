@@ -13,7 +13,7 @@ app.use(bodyparser.urlencoded({
 }));
 app.use(bodyparser.json());
 app.set('views', path.join(__dirname, '/views/'));
-app.engine('html', exphbs({ extname: 'html', defaultLayout: 'mainLayout', layoutsDir: __dirname + '/views/layouts/' }));
+app.engine('html', exphbs({ extname: 'html', defaultLayout: 'index', layoutsDir: __dirname + '/views/layouts/' }));
 app.set('view engine', 'html');
 
 app.listen(3000, () => {
