@@ -1,0 +1,35 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/producto" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label>Nombre del Producto</label>
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{employee.nombre}}">
+        <div class="text-danger">
+            {{employee.nombreError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Precio</label>
+        <input type="text" class="form-control" name="precio" placeholder="precio" value="{{employee.precio}}">
+        <div class="text-danger">
+            {{employee.precioError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" placeholder="descripcion" value="{{employee.descripcion}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Stock</label>
+            <input type="text" class="form-control" name="stock" placeholder="stock" value="{{employee.stock}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Categoria</label>
+            <input type="text" class="form-control" name="categoria" placeholder="categoria" value="{{employee.categoria}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Guardar</button>
+        <a class="btn btn-secondary" href="/producto/list"><i class="fa fa-list-alt"></i> Listar</a>
+    </div>
+</form>
