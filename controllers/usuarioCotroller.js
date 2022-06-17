@@ -5,7 +5,7 @@ const Employee = mongoose.model('productos');
 
 router.get('/', (req, res) => {
     res.render("producto/addOrEdit", {
-        viewTitle: "Agregar producto"
+        viewTitle: "Agregar Contacto"
     });
 });
 
@@ -31,7 +31,7 @@ function insertRecord(req, res) {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
                 res.render("producto/addOrEdit", {
-                    viewTitle: "Agregar producto",
+                    viewTitle: "Agregar contacto",
                     employee: req.body
                 });
             }
@@ -48,7 +48,7 @@ function updateRecord(req, res) {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
                 res.render("producto/addOrEdit", {
-                    viewTitle: 'Actualizar producto',
+                    viewTitle: 'Actualizar contacto',
                     employee: req.body
                 });
             }
@@ -92,7 +92,7 @@ router.get('/:id', (req, res) => {
     Employee.findById(req.params.id, (err, doc) => {
         if (!err) {
             res.render("producto/addOrEdit", {
-                viewTitle: "Actualizar producto",
+                viewTitle: "Actualizar contacto",
                 employee: doc
             });
         }
